@@ -1,0 +1,61 @@
+# FastAPI load-balanced web service. Resource sizing accommodates the model,
+# embedding, retrieval, and database client stack initialized at startup.
+# Secrets are loaded from SSM Parameter Store.
+
+name: api
+type: Load Balanced Web Service
+
+http:
+  path: '/'
+  healthcheck:
+    path: '/health'
+    healthy_threshold: 2
+    unhealthy_threshold: 5
+    interval: 30s
+    timeout: 10s
+    grace_period: 120s        # lifespan warmup needs time on cold start
+
+image:
+  # Pre-built image published to ECR by scripts/aws/build_push_images.sh.
+  location: ${AWS_ACCOUNT_ID}.dkr.ecr.ap-southeast-2.amazonaws.com/auckland-hospital/api:latest
+  port: 8000
+
+cpu: 1024            # 1 vCPU
+memory: 2048         # 2 GiB
+platform: linux/arm64   # Graviton-compatible runtime
+count: 2             # Two API replicas
+exec: true
+network:
+  connect: true
+  vpc:
+    placement: public
+
+variables:
+  # REDIS_URL is injected from SSM by scripts/aws/wire_redis_url.sh.
+  ARQ_WORKER_ENABLED: "true"
+  LOG_LEVEL: info
+  TIMEZONE: Pacific/Auckland
+
+# Secrets pulled from SSM Parameter Store under /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/<KEY>.
+# Key on the left = env var name in the container.
+# Value on the right = parameter name in SSM.
+secrets:
+  REDIS_URL:              /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/REDIS_URL
+  SUPABASE_DB_URL:        /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/SUPABASE_DB_URL
+  SUPABASE_URL:           /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/SUPABASE_URL
+  SUPABASE_SERVICE_KEY:   /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/SUPABASE_SERVICE_KEY
+  QDRANT_URL:             /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/QDRANT_URL
+  QDRANT_API_KEY:         /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/QDRANT_API_KEY
+  GROQ_API_KEY:           /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/GROQ_API_KEY
+  OPENROUTER_API_KEY:     /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/OPENROUTER_API_KEY
+  OPENAI_API_KEY:         /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/OPENAI_API_KEY
+  ANTHROPIC_API_KEY:      /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/ANTHROPIC_API_KEY
+  TAVILY_API_KEY:         /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/TAVILY_API_KEY
+  LANGFUSE_PUBLIC_KEY:    /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/LANGFUSE_PUBLIC_KEY
+  LANGFUSE_SECRET_KEY:    /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/LANGFUSE_SECRET_KEY
+  LANGFUSE_BASE_URL:      /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/LANGFUSE_BASE_URL
+  LIVEKIT_URL:            /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/LIVEKIT_URL
+  LIVEKIT_API_KEY:        /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/LIVEKIT_API_KEY
+  LIVEKIT_API_SECRET:     /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/LIVEKIT_API_SECRET
+  DEEPGRAM_API_KEY:       /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/DEEPGRAM_API_KEY
+  ELEVEN_API_KEY:         /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/ELEVEN_API_KEY

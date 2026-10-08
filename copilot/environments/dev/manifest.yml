@@ -1,0 +1,13 @@
+# =============================================================================
+# auckland-hospital - development environment
+#
+# Uses the AWS Copilot default VPC topology. Service-level manifests control
+# placement and public exposure. Private subnet placement with managed egress is
+# recommended when handling production patient data.
+# =============================================================================
+
+name: dev
+type: Environment
+
+observability:
+  container_insights: false

@@ -1,0 +1,318 @@
+staff:
+- query: What are the working hours and shift timings at Auckland Hospital?
+  answer: Clinical and administrative rosters follow current Health NZ and Auckland Hospital employment policy. Check the
+    roster or contact Auckland Hospital HR for current shift times.
+- query: What is the leave policy for permanent employees?
+  answer: Leave entitlements and approval workflows follow the applicable New Zealand employment agreement and Health NZ policy.
+    Confirm current balances and notice requirements with Auckland Hospital HR.
+- query: How many sick days do employees get?
+  answer: Sick leave and medical certificate requirements follow the employee's New Zealand employment agreement and Health
+    NZ policy.
+- query: What is the maternity leave entitlement?
+  answer: Parental leave entitlements follow New Zealand legislation and the employee's Health NZ employment agreement. Confirm
+    current details with HR.
+- query: What is the dress code for clinical staff?
+  answer: Clinical staff must wear hospital-issued scrubs or uniforms with closed-toe, fluid-resistant shoes. Hair must be
+    tied back, and dangling jewelry is prohibited. ID badges must be visible at all times.
+- query: What are the employee medical benefits?
+  answer: Employee benefits follow current Health NZ policy and the applicable collective or individual employment agreement.
+- query: What is the disciplinary process at Auckland Hospital?
+  answer: The disciplinary process involves verbal warnings, written warnings (up to three), suspension pending inquiry, and
+    potential termination, depending on the severity of the misconduct as per the HR handbook.
+clinical:
+- query: What is the patient admission process?
+  answer: Patients arrive via OPD, Emergency, or planned admission. The admission desk verifies identity and insurance, initiates
+    the EMR file, and escorts the patient to the ward, where nursing staff perform the initial assessment.
+- query: How does the triage system work in the emergency department?
+  answer: 'The Emergency Department uses a 5-level triage system: Resuscitation (immediate), Emergent (within 15 mins), Urgent
+    (within 30 mins), Less Urgent (within 1 hr), and Non-Urgent (within 2 hrs).'
+- query: What is the ISBAR handover protocol?
+  answer: 'All clinical handovers must follow the ISBAR format: Identify (patient details), Situation (current problem), Background
+    (brief history), Assessment (current vital signs/findings), and Recommendation (what needs to be done).'
+- query: What is the discharge process for inpatients?
+  answer: Discharge is initiated by the consultant's written order. Nursing staff prepares a discharge summary, pharmacy prepares
+    take-home medications, and billing finalizing the invoice. Patients are briefed on post-discharge care before leaving.
+- query: What are the five rights of medication administration?
+  answer: 'Nurses must verify the Five Rights before administering any medication: Right Patient, Right Drug, Right Dose,
+    Right Route, and Right Time.'
+- query: What is the surgical safety checklist?
+  answer: 'The WHO Surgical Safety Checklist is mandatory for all procedures. It involves three stages: Sign-in (before induction
+    of anesthesia), Time-out (before skin incision), and Sign-out (before the patient leaves the operating room).'
+- query: What is the blood transfusion protocol?
+  answer: Blood transfusions require two RNs to independently verify patient ID, blood type, and component expiry against
+    the doctor's order at the bedside before starting the transfusion. Vitals must be monitored at 15 mins, 30 mins, and hourly.
+emergency:
+- query: What is the Code Blue procedure for cardiac arrest?
+  answer: Code Blue procedures follow Auckland Hospital's local emergency policy. Call the internal emergency extension shown
+    on the unit, state the location, start CPR, and follow the responding team's instructions.
+- query: What should staff do in case of a fire emergency?
+  answer: For a fire, raise the alarm, rescue people in immediate danger when safe, close doors to contain smoke, and evacuate
+    using Auckland Hospital's current fire procedure. Follow ward signage and staff instructions.
+- query: What is the Code Orange mass casualty protocol?
+  answer: Code Orange is activated for external mass casualties. All off-duty ER staff are recalled, elective surgeries are
+    canceled, and the triage area is expanded to the main lobby to handle the influx of patients.
+- query: What happens during a power failure at the hospital?
+  answer: In the event of a power failure, backup generators automatically start within 10 seconds. Critical equipment in
+    ICUs and ORs are supported by UPS bridge power. Non-essential lighting will remain off.
+- query: What are the fire extinguisher types and their uses?
+  answer: Water extinguishers (Red) for combustible materials (wood, paper). CO2 extinguishers (Black) for electrical fires.
+    Dry Powder (Blue) for flammable liquids and gases.
+- query: What is the emergency evacuation procedure at the hospital?
+  answer: The emergency evacuation procedure requires staff to calmly guide patients to the nearest exit stairwell (do not
+    use elevators), assisting mobility-impaired patients using evacuation chairs. Assembly points are marked in the main car
+    park.
+infection_control:
+- query: What is the hand hygiene policy?
+  answer: 'Staff must perform hand hygiene following the WHO ''5 Moments'': before patient contact, before aseptic tasks,
+    after bodily fluid exposure, after patient contact, and after contact with patient surroundings.'
+- query: What PPE is required for airborne precautions?
+  answer: Airborne precautions require an N95 respirator (fit-tested), gloves, gown, and eye protection (goggles or face shield)
+    before entering the patient's negative-pressure isolation room.
+- query: How many negative pressure isolation rooms does Auckland Hospital have?
+  answer: Auckland Hospital maintains designated negative-pressure rooms. Current capacity and access are managed by Infection
+    Prevention and Control.
+- query: What is the cleaning protocol for patient rooms?
+  answer: Standard room cleaning uses 1000 ppm hypochlorite solution. Terminal cleaning (after patient discharge) involves
+    a deep clean followed by UV light disinfection or hydrogen peroxide vapor logging.
+- query: What is the needlestick injury protocol?
+  answer: Immediately wash the wound with soap and water (do not squeeze). Report the incident to the supervisor and Infection
+    Control team immediately. Proceed to ER for post-exposure prophylaxis (PEP) assessment within 2 hours.
+- query: How does the antibiotic stewardship programme work?
+  answer: The program restricts the use of broad-spectrum antibiotics. Restricted antibiotics require approval from an infectious
+    disease specialist or clinical microbiologist within 48 hours of empirical starting.
+patient_safety:
+- query: How is patient identification verified?
+  answer: Patient identity must be verified using two identifiers (Full Name and Date of Birth or Patient ID number) against
+    the wristband before any medication, blood test, or procedure.
+- query: What are the high-alert medications at Auckland Hospital?
+  answer: High-alert medications include Insulin, Opiates/Narcotics, Injectable Potassium Chloride/Phosphate, Intravenous
+    Anticoagulants (Heparin), and Chemotherapeutic agents. These require independent double-checks.
+- query: What is the fall prevention programme?
+  answer: All admitted patients undergo a Morse Fall Scale assessment. High-risk patients receive a yellow wristband, bed
+    alarms are activated, and non-slip footwear is provided.
+- query: How are medication errors reported?
+  answer: Medication errors must be reported immediately to the attending physician to manage patient safety, followed by
+    an incident report submitted via the internal portal within 24 hours for root-cause analysis.
+- query: What is the Braden Scale for pressure injury risk?
+  answer: The Braden Scale assesses a patient's risk of developing pressure ulcers based on sensory perception, moisture,
+    activity, mobility, nutrition, and friction/shear. Scores under 18 trigger preventive protocols.
+- query: How does incident reporting work?
+  answer: Any adverse event, near miss, or hazard must be documented in the online Incident Reporting System. Reports are
+    non-punitive and reviewed by the Quality Assurance committee to improve systemic safety.
+cardiology:
+- query: What cardiology services does Auckland Hospital offer?
+  answer: Auckland Hospital provides acute and elective cardiology services, including ECG, echocardiography, monitoring,
+    interventional services, and cardiac rehabilitation. Availability depends on referral and clinical need.
+- query: What is the STEMI door-to-balloon time target?
+  answer: The target 'door-to-balloon' time for patients arriving with an acute ST-elevation myocardial infarction (STEMI)
+    is less than 90 minutes to ensure rapid reperfusion.
+- query: How does the cardiac rehabilitation programme work?
+  answer: The 12-week program includes supervised exercise training, dietary counseling, stress management, and medication
+    adherence education for post-MI and post-CABG patients.
+- query: What tests are available in the non-invasive cardiology lab?
+  answer: The non-invasive lab offers ECG, 2D/3D Transthoracic Echocardiography, Transesophageal Echocardiography (TEE), Treadmill
+    Stress Tests, and 24-hour ambulatory BP/Holter monitoring.
+- query: What is the heart failure management pathway?
+  answer: The pathway involves multidisciplinary care aimed at optimizing Guideline-Directed Medical Therapy (GDMT), fluid
+    management, patient education on daily weights, and early post-discharge follow-up.
+radiology:
+- query: What imaging equipment does Auckland Hospital have?
+  answer: Auckland Hospital imaging services include MRI, CT, X-ray, ultrasound and other diagnostic imaging. Available equipment
+    and appointment times vary by service.
+- query: What preparation is needed for an MRI scan?
+  answer: Patients must complete a safety screening questionnaire. Metallic objects, jewelry, and credit cards must be removed.
+    Fasting for 4-6 hours may be required if contrast is to be administered.
+- query: What is the contrast reaction management protocol?
+  answer: In the event of an allergic reaction to contrast media, the scan is immediately stopped. The radiologist administers
+    epinephrine, antihistamines, and oxygen as per the anaphylaxis protocol. The crash cart is always on standby.
+- query: What are the MRI safety contraindications?
+  answer: Absolute contraindications for MRI include cardiac pacemakers (unless MRI-conditional), cochlear implants, certain
+    aneurysm clips, and metallic fragments in the eyes.
+- query: How long does it take to get a radiology report?
+  answer: Routine X-ray and Ultrasound reports are finalized within 2-4 hours. CT and MRI reports take 12-24 hours. Urgent
+    scans (STAT orders) are reported verbally to the physician within 30 minutes.
+laboratory:
+- query: What are the lab turnaround times?
+  answer: Routine biochemistry and hematology results are available within 4 hours. Microbiology cultures take 48-72 hours.
+    STAT test results are guaranteed within 1 hour.
+- query: What are the blood specimen tube colours and their uses?
+  answer: Purple (EDTA) for FBC, Light Blue (Citrate) for coagulation (PT/INR), Red (Serum) for biochemistry/immunology, and
+    Grey (Fluoride/Oxalate) for glucose testing.
+- query: What are the critical lab values that require immediate notification?
+  answer: Critical result limits, units and notification times follow the current local laboratory policy. Check the laboratory
+    handbook or contact the duty laboratory clinician for the applicable test. Do not rely on the assistant to determine
+    a critical result.
+- query: How does the blood bank manage emergency blood requests?
+  answer: Emergency blood requests must follow the current local transfusion protocol. Contact the blood bank or clinical
+    team directly for availability, compatibility testing and issue times.
+- query: What quality control measures does the laboratory follow?
+  answer: The laboratory runs daily internal QC samples before patient testing and participates in recognized External Quality
+    Assurance (EQA) programs like RIQAS or RCPA.
+pharmacy:
+- query: What are the pharmacy operating hours?
+  answer: The inpatient and outpatient pharmacies operate 24/7, including public holidays and weekends.
+- query: How are controlled substances managed?
+  answer: Controlled drugs (e.g., Morphine, Fentanyl) are kept in a double-locked safe. Administration requires a specific
+    prescription, and a physical count is verified by two nurses at every shift change.
+- query: What is the therapeutic drug monitoring process?
+  answer: TDM involves drawing blood at specific times (peak or trough) to measure drug levels. Pharmacy adjusts dosing for
+    narrow-therapeutic-index drugs like Vancomycin, Phenytoin, and Digoxin based on these results.
+- query: How are cytotoxic drugs handled?
+  answer: Cytotoxic drugs are prepared in a dedicated biological safety cabinet by trained oncology pharmacists wearing full
+    protective gear, following strict hazardous drug protocols to prevent exposure.
+- query: What drugs require TDM at Auckland Hospital?
+  answer: Drugs requiring TDM at Auckland Hospital include Aminoglycosides (Gentamicin/Amikacin), Vancomycin, Digoxin, Lithium,
+    Phenytoin, and immunosuppressants like Tacrolimus.
+billing:
+- query: What payment methods does Auckland Hospital accept?
+  answer: Payment and eligibility depend on publicly funded care, residency status, or private treatment. Confirm current
+    charges and payment methods with Auckland Hospital Patient Accounts; amounts are quoted in NZD.
+- query: What insurance companies have direct billing agreements?
+  answer: Private insurance claims depend on the insurer and policy. Bring your NHI and insurance details and obtain any required
+    pre-authorisation before admission.
+- query: What is the room charge for a private room?
+  answer: Any private or non-funded charges vary by service and eligibility. Confirm the current schedule with Auckland Hospital
+    Patient Accounts before treatment.
+- query: How much does a coronary angiogram cost?
+  answer: Coronary angiogram charges depend on clinical pathway, eligibility, and insurer. Confirm the current estimate with
+    the cardiology team and Patient Accounts.
+- query: What is the financial hardship policy?
+  answer: Patients demonstrating severe financial hardship can apply for a discount or installment plan via the Medical Social
+    Worker department, subject to management approval.
+privacy:
+- query: What is the data privacy policy?
+  answer: Auckland Hospital handles health information under the New Zealand Privacy Act 2020 and Health Information Privacy
+    Code 2020. Access is limited to authorised staff with a care or operational need.
+- query: How is patient data classified?
+  answer: Patient data is classified as Highly Sensitive Personal Health Information (PHI). It cannot be shared via unsecured
+    platforms like WhatsApp or personal email.
+- query: What is the break-the-glass procedure for EMR access?
+  answer: In emergencies, clinicians can use the 'Break-the-Glass' feature to bypass access restrictions and view a patient's
+    full EMR. This triggers an immediate audit log review by the Privacy Officer.
+- query: How long are patient records retained?
+  answer: Electronic medical records are kept indefinitely. Physical records for adults are retained for 10 years post-discharge;
+    obstetric and pediatric records are retained for 21 years.
+- query: What happens in case of a data breach?
+  answer: Any suspected data breach must be reported to the IT Security Officer immediately. The hospital will contain the
+    breach, notify affected patients within 72 hours, and report to regulatory authorities.
+training:
+- query: What is the new employee orientation programme?
+  answer: All new hires undergo a 3-day general orientation covering hospital policies, safety protocols, infection control,
+    and customer service, followed by a department-specific induction.
+- query: What mandatory training is required annually?
+  answer: Annual mandatory training includes Basic Life Support (BLS), Fire Safety and Evacuation, Infection Control, and
+    Data Privacy updates.
+- query: What CME requirements do doctors need to meet?
+  answer: Professional development and continuing competence follow Health NZ policy and the requirements of the relevant
+    New Zealand registration body. Confirm current requirements with the clinical director or registration body.
+- query: What simulation training facilities are available?
+  answer: The Clinical Training Centre features high-fidelity adult and pediatric manikins for Code Blue simulations, airway
+    management training, and trauma resuscitation drills.
+- query: What nursing specialisation programmes does Auckland Hospital offer?
+  answer: Nursing education and specialty training opportunities vary. Check current Health NZ and Auckland Hospital clinical
+    education offerings.
+patient_faqs:
+- query: What are the opening hours of Auckland Hospital?
+  answer: The Emergency Department and inpatient services operate 24/7. Outpatient clinics and diagnostics have scheduled
+    hours that vary by service. Confirm the time on your appointment or the official Auckland Hospital service page.
+- query: Is the hospital open 24/7?
+  answer: The Emergency Department, inpatient services, ICU, labour room, and pharmacy are open 24 hours every day including
+    weekends and public holidays. OPD clinics operate 07:00–22:00; specialist consultant clinics run by appointment between
+    14:00 and 21:00.
+- query: What are the OPD timings?
+  answer: Outpatient clinics operate on scheduled appointments. Check your appointment details or contact the clinic for current
+    hours and arrival instructions.
+- query: What are the visiting hours for inpatients?
+  answer: General ward visiting hours are 11:00–13:00 and 17:00–20:00 daily. ICU and CCU have restricted visiting (15:00–16:00
+    and 19:00–20:00, two visitors at a time, no children under 12). Maternity ward visiting is 11:00–13:00 and 17:00–19:00.
+    Please carry a valid ID; visitor passes are issued at the main reception.
+- query: When can I visit a patient in the ICU?
+  answer: ICU visiting hours are strictly 15:00–16:00 and 19:00–20:00 daily. Only two relatives at a time, and children under
+    12 are not permitted in ICU areas. Please sanitise hands at the entrance and follow the nursing staff's instructions;
+    PPE may be required for certain patients.
+- query: When are the pharmacy and lab open?
+  answer: Inpatient pharmacy and laboratory support is available for urgent clinical care. Public outpatient hours vary by
+    service, so confirm the current opening time before visiting.
+- query: What should I bring to my appointment at Auckland Hospital?
+  answer: 'Please bring: (1) a government-issued photo ID (NZ driver licence or passport), (2) your appointment confirmation
+    SMS or booking ID, (3) any current medications you are taking — original boxes/strips preferred, (4) previous medical
+    reports, scans or prescriptions relevant to the visit, and (5) your insurance card if applicable. Arrive 15 minutes early
+    to complete registration.'
+- query: What do I need to bring for a first-time visit?
+  answer: On your first visit please bring a photo ID (NZ driver licence or passport), your phone (for OTP verification),
+    any past medical records or scans you have, a list of current medications, and your insurance card if you intend to claim.
+    First-visit registration takes about 10 minutes; please arrive 15 minutes before your appointment time.
+- query: Do I need to fast before a blood test?
+  answer: Fasting is required for tests including Fasting Blood Sugar (FBS), Lipid Profile, and OGTT — fast for 8–12 hours,
+    water is allowed. Postprandial Glucose (PPBS) requires eating exactly 2 hours before the draw. Most other blood tests
+    do not require fasting; the lab counter will confirm at booking.
+- query: How early should I arrive for my appointment?
+  answer: Please arrive 15 minutes before your appointment time for OPD consultations, 30 minutes before for any imaging (CT,
+    MRI, ultrasound), and 60 minutes before for procedures or day surgery. Earlier arrival lets us complete registration,
+    vitals, and any pre-procedure paperwork without delaying the consultant.
+- query: What should I bring for a CT or MRI scan?
+  answer: Bring a photo ID, the doctor's referral request, any previous imaging on CD or report, and your appointment confirmation.
+    Wear loose comfortable clothing without metal zips, hooks or embroidery. For contrast-enhanced scans, fast for 4 hours.
+    Inform the radiographer if you have implants, a pacemaker, are pregnant, or have a known contrast allergy.
+- query: Should I stop my medications before surgery?
+  answer: 'Do NOT stop any prescription medications without your surgeon''s instruction. Common pre-op guidance: continue
+    regular medications with a sip of water; stop blood thinners (warfarin, aspirin, clopidogrel) only as advised, usually
+    5–7 days before surgery; hold metformin on the morning of surgery. Bring all current medications in their original packaging
+    on the day of admission.'
+- query: Where is Auckland Hospital located?
+  answer: Auckland City Hospital is at 2 Park Road, Grafton, Auckland 1023, New Zealand. For patient enquiries call 09 375
+    4300 or use the official Health NZ hospital page.
+- query: How can I get to Auckland Hospital Auckland?
+  answer: Auckland City Hospital is on Park Road in Grafton. Use the official Health NZ directions and public transport information,
+    or ask the hospital switchboard for current access advice.
+- query: Is there parking at Auckland Hospital?
+  answer: Paid parking is available near Auckland City Hospital. Current locations, concessions and rates change, so check
+    the official Auckland Hospital parking information before travelling.
+- query: Where can I park my car at the hospital?
+  answer: Use the current hospital parking areas or public transport options listed by Health NZ. Check posted signs for rates
+    and accessibility spaces.
+- query: Is parking free at Auckland Hospital?
+  answer: Parking rates and concessions vary. Check the current official Auckland Hospital parking information and posted
+    signs.
+- query: When do specialist clinics run?
+  answer: Specialist clinics run at scheduled appointment times that vary by service. Confirm the time on your referral or
+    appointment letter, or contact the clinic through Auckland Hospital.
+- query: What time do consultant clinics start?
+  answer: Clinic hours vary by specialty and appointment type. Use your appointment details or contact the relevant Auckland
+    Hospital clinic for current hours.
+- query: Are consultants available in the morning?
+  answer: Morning availability varies by specialty. Appointments are normally required, so check with the relevant Auckland
+    Hospital clinic.
+- query: What is the emergency hotline number?
+  answer: For a life-threatening emergency in New Zealand, call 111 and ask for the emergency service you need. For routine
+    hospital enquiries, use the current contact details on the official Health NZ hospital page.
+- query: How do I call an ambulance?
+  answer: Call 111 for an ambulance. Give the exact location, the patient's age and a brief description, and follow the dispatcher's
+    instructions.
+- query: What should I do in a medical emergency?
+  answer: If life-threatening, call 111 immediately. Follow dispatcher instructions and bring current medication information
+    if it is safe to do so.
+- query: What payment methods does Auckland Hospital accept?
+  answer: Public funding eligibility and private charges vary. Confirm current payment options and any estimate with Auckland
+    Hospital Patient Accounts; amounts are quoted in NZD.
+- query: Do you accept my insurance?
+  answer: Insurance arrangements depend on your policy and eligibility. Bring your NHI and insurer details and confirm pre-authorisation
+    requirements with Auckland Hospital Patient Accounts.
+- query: How do I claim insurance for my appointment?
+  answer: Ask Patient Accounts about pre-authorisation, estimates, invoices and receipts before treatment. Your insurer can
+    confirm reimbursement rules.
+- query: What does an OPD consultation cost?
+  answer: Consultation and treatment charges vary by eligibility, referral and service. Request a current estimate from the
+    clinic or Patient Accounts before a non-funded visit.
+- query: How do I collect my lab or scan reports?
+  answer: Report availability depends on the test and clinical workflow. Ask the ordering team how results will be released;
+    use approved Health NZ systems where enabled.
+- query: Can I get my report online?
+  answer: Ask the ordering clinic whether an approved patient portal is enabled for your result. Do not send health information
+    through unsecured channels.
+- query: How do I refill a prescription?
+  answer: Bring your prescription and NHI details and ask the treating team or hospital pharmacy about current dispensing
+    requirements. Controlled medicines require the appropriate authorised prescription.
+- query: Do you offer telemedicine or online consultations?
+  answer: Some services offer telehealth when clinically appropriate. Ask the clinic whether it is available for your referral
+    and use only the approved Health NZ link provided to you.

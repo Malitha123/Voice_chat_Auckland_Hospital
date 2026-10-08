@@ -1,0 +1,94 @@
+# Build and deploy the API and worker services on pushes to the dev branch.
+# AWS authentication uses GitHub OIDC. Images are built for the arm64 Fargate
+# platform and published to ECR before the ECS services are refreshed.
+# Voice remains an on-demand service and is deployed separately.
+name: deploy
+
+on:
+  push:
+    branches: [dev]
+    # Documentation-only changes do not trigger a deployment.
+    paths-ignore:
+      - 'docs/**'
+      - '**/*.md'
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-dev
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: ap-southeast-2
+  ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+  REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-2.amazonaws.com
+  CLUSTER_FILTER: auckland-hospital-dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/gha-deploy-auckland-hospital
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Log in to Amazon ECR
+        run: |
+          aws ecr get-login-password --region "$AWS_REGION" \
+            | docker login --username AWS --password-stdin "$REGISTRY"
+
+      - name: Build api image (bundles the SPA)
+        run: |
+          SHA="${GITHUB_SHA::7}"
+          docker build \
+            -f docker/api/Dockerfile \
+            -t "$REGISTRY/auckland-hospital/api:latest" \
+            -t "$REGISTRY/auckland-hospital/api:$SHA" \
+            .
+
+      - name: Push api image
+        run: |
+          SHA="${GITHUB_SHA::7}"
+          docker push "$REGISTRY/auckland-hospital/api:latest"
+          docker push "$REGISTRY/auckland-hospital/api:$SHA"
+
+      - name: Retag + push worker image (reuses api image)
+        run: |
+          docker tag  "$REGISTRY/auckland-hospital/api:latest" "$REGISTRY/auckland-hospital/worker:latest"
+          docker push "$REGISTRY/auckland-hospital/worker:latest"
+
+      - name: Force ECS rollout (api + worker)
+        run: |
+          CLUSTER=$(aws ecs list-clusters \
+            --query "clusterArns[?contains(@,'$CLUSTER_FILTER')]" --output text)
+          echo "Cluster: $CLUSTER"
+          for svc in api worker; do
+            SVC=$(aws ecs list-services --cluster "$CLUSTER" \
+              --query "serviceArns[?contains(@,'-${svc}-')]" --output text)
+            echo "Rolling $svc → $SVC"
+            aws ecs update-service --cluster "$CLUSTER" --service "$SVC" \
+              --force-new-deployment >/dev/null
+          done
+
+      - name: Wait for services to stabilize
+        run: |
+          CLUSTER=$(aws ecs list-clusters \
+            --query "clusterArns[?contains(@,'$CLUSTER_FILTER')]" --output text)
+          for svc in api worker; do
+            SVC=$(aws ecs list-services --cluster "$CLUSTER" \
+              --query "serviceArns[?contains(@,'-${svc}-')]" --output text)
+            echo "Waiting for $svc to stabilize…"
+            aws ecs wait services-stable --cluster "$CLUSTER" --services "$SVC"
+            echo "$svc is stable ✓"
+          done
+
+      - name: Done
+        run: echo "✅ Deployed api + worker to AWS from commit ${GITHUB_SHA::7}"
